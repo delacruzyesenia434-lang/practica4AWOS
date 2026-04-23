@@ -5,8 +5,8 @@ from flask_cors import CORS, cross_origin
 app = Flask(__name__)
 CORS(app)
 
-@app.route('/productos')
-def productos():
+@app.route('/ingredientes')
+def ingredientes():
     import mysql.connector
     mydb = mysql.connector.connect(
         host="46.28.42.226",
@@ -16,12 +16,12 @@ def productos():
     )
 
     mycursor = mydb.cursor()
-    mycursor.execute("SELECT * FROM productos")
+    mycursor.execute("SELECT * FROM ingredientes")
     myresult = mycursor.fetchall()
     return make_response(jsonify(myresult))
 
-@app.post('/producto')
-def producto():
+@app.post('/ingrediente')
+def ingrediente():
     import mysql.connector
     mydb = mysql.connector.connect(
         host="46.28.42.226",
@@ -31,8 +31,8 @@ def producto():
     )
 
     mycursor = mydb.cursor()
-    sql = "INSERT INTO productos (nombre, categoria, precio, existencias) VALUES (%s, %s, %s, %s)"
-    val = (request.form['txtNombre'], request.form['cboCategoria'], request.form['txtPrecio'], request.form['txtExistencias'])
+    sql = "INSERT INTO ingredientes (nombre) VALUES (%s)"
+    val = (request.form['txtNombre'],)
     mycursor.execute(sql, val)
     mydb.commit()
     return "correcto"
