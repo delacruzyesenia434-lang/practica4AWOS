@@ -10,9 +10,9 @@ def productos():
     import mysql.connector
     mydb = mysql.connector.connect(
         host="46.28.42.226",
-        user="u760464709_prueba_usr",
-        password="|Au/mc*H2jH3",
-        database="u760464709_prueba_bd"
+        user="u760464709_24005299_usr",
+        password="!4V2rHq@rQh",
+        database="u760464709_24005299_bd"
     )
 
     mycursor = mydb.cursor()
@@ -25,9 +25,9 @@ def producto():
     import mysql.connector
     mydb = mysql.connector.connect(
         host="46.28.42.226",
-        user="u760464709_prueba_usr",
-        password="|Au/mc*H2jH3",
-        database="u760464709_prueba_bd"
+        user="u760464709_24005299_usr",
+        password="!4V2rHq@rQh",
+        database="u760464709_24005299_bd"
     )
 
     mycursor = mydb.cursor()
