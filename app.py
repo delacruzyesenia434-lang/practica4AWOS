@@ -32,7 +32,7 @@ def ingrediente():
 
     mycursor = mydb.cursor()
     sql = "INSERT INTO ingredientes (nombre) VALUES (%s)"
-    val = (request.form['txtNombre'],)
+    val = (request.form['Harina'],)
     mycursor.execute(sql, val)
     mydb.commit()
     return "correcto"
